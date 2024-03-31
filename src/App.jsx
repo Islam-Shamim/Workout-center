@@ -1,4 +1,5 @@
 import './App.css'
+import Memberships from './Components/Gym/Memberships'
 import Routes from './Components/Routes/Routes'
 
 function App() {
@@ -7,6 +8,7 @@ function App() {
   return (
     <div>
       <Routes></Routes>
+      <Memberships></Memberships>
       <div className="card w-96 bg-base-100 shadow-xl">
         <figure><img src="https://daisyui.com/images/stock/photo-1606107557195-0e29a4b5b4aa.jpg" alt="Shoes" /></figure>
         <div className="card-body">
