@@ -1,5 +1,7 @@
+import { useState } from "react";
 import Route from "../Route/Route";
-import { FiMenu } from "react-icons/fi";
+import { AiOutlineMenu } from "react-icons/ai";
+import { AiOutlineMenuUnfold } from "react-icons/ai";
 const Cards = () => {
     const routes = [
         { id: 1, path: '/', name: 'Home' },
@@ -9,11 +11,19 @@ const Cards = () => {
         { id: 5, path: '*', name: 'Not Found' }
     ];
 
+    const [open,setOpen] = useState(false)
+
     return (
         <div>
-            <h2 className="md:hidden ml-4"><FiMenu /></h2>
-            <div className="bg-gray-200 p-4 rounded-lg">
-                <div className="md:flex justify-between">
+            <div className="md:hidden" onClick={() =>setOpen(!open)}>
+                {
+                    open === true ? <AiOutlineMenuUnfold />: <AiOutlineMenu />
+                }
+                
+            </div>
+            <div className=" p-4 md:bg-gray-200 rounded-lg">
+                <div className={`md:flex justify-between static ${open ?"":"hidden"}`}>
+                    {/*duration-1000 absolute ${open ?"top-16":"top-60"}` */}
                     {
                         routes.map(route => <Route key={route.id} route={route}></Route>)
                     }

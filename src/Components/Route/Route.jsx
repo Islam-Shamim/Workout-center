@@ -1,8 +1,8 @@
 const Route = ({route}) => {
     const {name,path} = route;
     return (
-        <ul className="hover:bg-red-800 rounded p-2">
-            <a href={path}>{name}</a>
+        <ul className="my-2">
+            <a className="hover:bg-red-800 hover:text-white rounded px-2 py-1" href={path}>{name}</a>
         </ul>
     );
 };
